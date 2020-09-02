@@ -3,31 +3,28 @@ syntax on
 filetype plugin indent on
 set nocompatible
 
-set rtp+=$HOME/.vim/bundle/Vundle.vim/
-call vundle#begin()
-
-" let Vundle manage Vundle
-" required!
-Plugin 'VundleVim/Vundle.vim'
+" vim-plug plugins list
+call plug#begin('~/.vim/plugged')
 
 " List of vundle bundles goes here
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'majutsushi/tagbar'
-Plugin 'FuzzyFinder'
-Plugin 'L9'
-Plugin 'bufferlist.vim'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'quramy/tsuquyomi'
-Plugin 'quramy/vison'
-Plugin 'pangloss/vim-javascript'
-Plugin 'tpope/vim-fugitive'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'docker/docker'
-Plugin 'andrewstuart/vim-kubernetes'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/syntastic'
+Plug 'majutsushi/tagbar'
+Plug 'FuzzyFinder'
+Plug 'L9'
+Plug 'bufferlist.vim'
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'quramy/tsuquyomi'
+Plug 'quramy/vison'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'tpope/vim-fugitive'
+Plug 'flazz/vim-colorschemes'
+Plug 'docker/docker', { 'for': 'dockerfile' }
+Plug 'andrewstuart/vim-kubernetes'
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
-call vundle#end()
-" End of vundle bundles List
+call plug#end()
+" End of vim-plug plugins List
 
 " ----- Syntastic -----
 set statusline+=%#warningmsg#
@@ -43,12 +40,9 @@ let g:syntastic_check_on_wq = 0
 set guifont=Liberation\ Mono\ 11
 set printfont=Courier:h7
 
-au BufNewFile,BufRead *.ws set filetype=lua
-au BufNewFile,BufRead *.conf set filetype=nginx
-au BufNewFile,BufRead *.racc set filetype=racc
 au BufNewFile,BufRead docker-compose*.yml set filetype=docker-compose
-au BufNewFile,BufRead Dockerfile set filetype=docker
-au BufNewFile,BufRead *.[Dd]ockerfile set filetype=docker
+au BufNewFile,BufRead Dockerfile set filetype=dockerfile
+au BufNewFile,BufRead *.[Dd]ockerfile set filetype=dockerfile
 au BufNewFile,BufRead *.ts set filetype=typescript
 au BufNewFile,BufRead *.tsx set filetype=typescript
 au BufNewFile,BufRead *.json set filetype=json
