@@ -10,9 +10,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
-Plug 'FuzzyFinder'
-Plug 'L9'
-Plug 'bufferlist.vim'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'quramy/tsuquyomi'
 Plug 'quramy/vison'
